@@ -63,7 +63,7 @@ const content = (state = [], action) => {
 
       // If metismenu user tries to activate non-exist item
       if (!activeItem){
-        const newStage state.map((obj) => { 
+        const newStage = state.map((obj) => { 
           const o = obj;
           o.active = false;
           o.subMenuVisibility = false;
