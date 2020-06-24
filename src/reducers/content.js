@@ -65,6 +65,8 @@ const content = (state = [], action) => {
       if (!activeItem){
         console.log("je suis dans !activeItem");
         return [];
+        
+       // const test  = state.map
       }
       
       console.log("je ne suis PAS dans !activeItem");
@@ -72,6 +74,9 @@ const content = (state = [], action) => {
 
       const { id, parentId, trace } = activeItem;
       const stage = state.map(i => item(i, Object.assign({ id, trace }, action)));
+      console.log("stage", stage);
+      console.log("content", content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true)););
+      
 
       // Trace also keeps parentId nonetheless it doesn't matter
       return content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true));
