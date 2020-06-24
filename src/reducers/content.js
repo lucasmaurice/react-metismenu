@@ -64,9 +64,16 @@ const content = (state = [], action) => {
       // If metismenu user tries to activate non-exist item
       if (!activeItem){
         console.log("je suis dans !activeItem");
-        return [];
+        // return [];
         
-       // const test  = state.map
+        
+        const test = state.map((obj) => { 
+          const o = obj;
+          o.active = false;
+          return o;
+        });
+        console.log("test", test);
+        return test
       }
       
       console.log("je ne suis PAS dans !activeItem");
