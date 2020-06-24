@@ -62,7 +62,7 @@ const content = (state = [], action) => {
       }
 
       // If metismenu user tries to activate non-exist item
-      if (!activeItem) return state;
+      if (!activeItem) return [];
 
       const { id, parentId, trace } = activeItem;
       const stage = state.map(i => item(i, Object.assign({ id, trace }, action)));
