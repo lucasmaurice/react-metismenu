@@ -75,7 +75,7 @@ const content = (state = [], action) => {
       const { id, parentId, trace } = activeItem;
       const stage = state.map(i => item(i, Object.assign({ id, trace }, action)));
       console.log("stage", stage);
-      console.log("content", content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true)););
+      console.log("content", content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true)));
       
 
       // Trace also keeps parentId nonetheless it doesn't matter
