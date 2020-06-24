@@ -131,6 +131,7 @@ class MetisMenu extends React.Component {
   }
 
   changeActiveLinkTo(value) {
+    alert("dedans");
     this.store.dispatch(changeActiveLinkTo(this.reduxUid, value));
   }
 
