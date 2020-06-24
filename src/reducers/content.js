@@ -63,28 +63,17 @@ const content = (state = [], action) => {
 
       // If metismenu user tries to activate non-exist item
       if (!activeItem){
-        console.log("je suis dans !activeItem");
-        // return [];
-        
-        
-        const test = state.map((obj) => { 
+        return state.map((obj) => { 
           const o = obj;
           o.active = false;
+          o.subMenuVisibility = false;
           return o;
         });
-        console.log("test", test);
-        return test
       }
-      
-      console.log("je ne suis PAS dans !activeItem");
-
 
       const { id, parentId, trace } = activeItem;
       const stage = state.map(i => item(i, Object.assign({ id, trace }, action)));
-      console.log("stage", stage);
-      console.log("content", content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true)));
       
-
       // Trace also keeps parentId nonetheless it doesn't matter
       return content(stage, changeSubMenuVisibility(action.reduxUid, parentId, trace, true));
     }
